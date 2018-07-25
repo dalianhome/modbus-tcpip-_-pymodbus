@@ -9,15 +9,12 @@ import datetime
 
 # tcp slave ip addr
 host = '192.168.0.10'
-
 port = 502
 print("yo, amigo, this is local folder")
 client = ModbusClient(host, port)
 connection = client.connect()
 socketOpen = client.is_socket_open()
-print(connection)
-print(socketOpen)
-#above code make sure connection is done
+
 
 i = True
 num1=0
@@ -32,9 +29,7 @@ while i:
     ts = time.time()
     st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
     print("400101  "+str(request.registers[0]) + "            "+st)
-    #create file and logging printout
-    f = open('logFile.txt', 'a')
-    f.write('\n' + str(q) + ". "+str(request.registers[0]) + "            "+st)
+    
     num1 = request.registers[0]
 #     update serial number
     q = q + 1
