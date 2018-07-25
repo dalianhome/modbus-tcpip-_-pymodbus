@@ -24,17 +24,19 @@ num1=0
 q=1
 print("Addr" + "    Data " + "           Logging Time")
 
+#loop the request 
 while i:
  request = client.read_holding_registers(0x64,2,unit=1)
-
+#no change no print out
  if num1 != request.registers[0]:
     ts = time.time()
     st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
     print("400101  "+str(request.registers[0]) + "            "+st)
-    # print(st)
+    #create file and logging printout
     f = open('logFile.txt', 'a')
     f.write('\n' + str(q) + ". "+str(request.registers[0]) + "            "+st)
     num1 = request.registers[0]
+#     update serial number
     q = q + 1
 
     
