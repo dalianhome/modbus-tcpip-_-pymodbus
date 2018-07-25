@@ -1,1 +1,0 @@
-python C:\Users\SP2ZBE\Desktop\Astar\test1\modbus\main.py
