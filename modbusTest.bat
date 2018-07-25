@@ -1,0 +1,1 @@
+python C:\Users\SP2ZBE\PycharmProjects\modbus\main.py
