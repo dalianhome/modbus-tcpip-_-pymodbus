@@ -5,7 +5,7 @@ import logging.handlers as Handlers
 import sys
 import time
 import datetime
-import logging
+
 # host = '192.168.0.10'
 host='localhost'
 port = 502
